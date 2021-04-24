@@ -1,0 +1,6 @@
+{
+    "local": "mongodb://localhost:27017/digital_feed_generator_db",
+    "remote_stage": "mongodb+srv://ferid:Toto2019*-1@cluster0-xicje.mongodb.net/digital_feed_generator_db?retryWrites=true&w=majority",
+    "remote_production": "mongodb+srv://ferid:Toto2019*-1@cluster0-xicje.mongodb.net/digital_feed_generator_db?retryWrites=true&w=majority",
+    "test":"mongodb://localhost:27017/test_feed_generator_db"
+}

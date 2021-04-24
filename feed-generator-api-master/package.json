@@ -1,0 +1,60 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "node ./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:watch": "nodemon ./bin/www",
+    "test": "cross-env node_modules/mocha/bin/mocha --recursive --timeout 900000 --exit",
+    "test-coverage": "cross-env NODE_ENV=test node_modules/mocha/bin/mocha --timeout 900000 test/**/*.spec.js",
+    "report": "cross-env NODE_ENV=test nyc --reporter=lcov node_modules/mocha/bin/mocha --timeout 900000 test/**/*.spec.js",
+    "text-report": "cross-env NODE_ENV=test nyc --reporter=text-summary node_modules/mocha/bin/mocha --timeout 900000 test/**/*.spec.js",
+    "nyc": "cross-env NODE_ENV=test nyc node_modules/mocha/bin/mocha --timeout 900000 test/**/*.spec.js --exit"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "debug": "~2.6.9",
+    "express": "4.16.3",
+    "express-load": "^1.1.16",
+    "express-validator": "^6.3.0",
+    "http-errors": "~1.6.3",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.7",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "faker": "^4.1.0",
+    "mocha": "^7.0.0",
+    "mockgoose": "^8.0.4",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "rewire": "^4.0.1",
+    "sinon": "^8.1.0",
+    "sinon-chai": "^3.4.0",
+    "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/helaliferid/idoormedia-digital-custom-feed.git"
+  },
+  "nyc": {
+    "exclude": [
+      "app.js",
+      "test/**/*.js",
+      "node_modules"
+    ],
+    "cache": false,
+    "report-dir": "./test/report"
+  },
+  "license": "MIT"
+}

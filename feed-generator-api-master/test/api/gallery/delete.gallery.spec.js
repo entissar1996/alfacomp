@@ -1,0 +1,1 @@
+//TODO: implemente delete picture tests
